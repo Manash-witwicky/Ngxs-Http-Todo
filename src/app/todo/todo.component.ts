@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TodoState } from './../state/todo.state';
-import { FetchTodo } from './../state/todo.actions';
+import { FetchTodo, RemoveTodo } from './../state/todo.actions';
 import { Store , Select } from '@ngxs/store';
 import { Observable } from 'rxjs';
 
@@ -17,9 +17,12 @@ export class TodoComponent implements OnInit {
 
   constructor(private store: Store) { }
 
+  deletetodo(id) {
+    this.store.dispatch(new RemoveTodo(id));
+  }
+
   ngOnInit() {
     this.store.dispatch(new FetchTodo());
-    console.log('Ng OnInit: ' + JSON.stringify(this.todo$));
   }
 
 }

@@ -1,7 +1,9 @@
 <div>
-  <ul>
-    <li *ngFor="let todo of todo$ | async">
-      <p>{{ todo.title }}</p>
-    </li>
-  </ul>
+  <form>
+      <h3>Todo List</h3>
+      <mat-list>
+        <a mat-list-item (click)="deletetodo(todo.id)" *ngFor="let todo of todo$ | async">{{todo.id}}. {{todo.title}}</a>
+      </mat-list>
+
+  </form>
 </div>
