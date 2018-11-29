@@ -2,7 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Action, Selector, State, StateContext } from '@ngxs/store';
 import { FetchTodo, RemoveTodo } from './todo.actions';
 import { TodoModel } from './todo.models';
-// Added By Manash_Dev
 const initialState: TodoModel = {
   fetchedTodo: [],
 };
